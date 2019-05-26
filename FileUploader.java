@@ -24,10 +24,10 @@ public class FileUploader {
    */
   public static boolean pictureUploader(String directory, MultipartFile multipartFile, String name) {
 
-    File file = fileSaver(directory, multipartFile, name);
+    File file = emptyFileSaveAndRename(directory, multipartFile, name);
 
     try {
-      fileNameChanger(multipartFile, file);
+      dataSaver(multipartFile, file);
       return true;
     } catch (NoSuchElementException e) {
       e.printStackTrace();
@@ -43,10 +43,9 @@ public class FileUploader {
    * @param name : This is the name new name assigned to the file created.
    * @return the file saved.
    */
-  public static File fileSaver(String dir, MultipartFile multipartFile, String name) {
+  public static File emptyFileSaveAndRename(String dir, MultipartFile multipartFile, String name) {
 
     String originalName = multipartFile.getOriginalFilename();
-    String ext = getFileExtension(originalName);
     String extension = getFileExtensionRegex(originalName);
 
     // Creates a new empty file with the name provided and the same extension of the passed file.
@@ -73,7 +72,7 @@ public class FileUploader {
    * @param multipartFile as the file coming from the user.
    * @param file as the empty file already created.
    */
-  public static void fileNameChanger(MultipartFile multipartFile, File file) {
+  public static void dataSaver(MultipartFile multipartFile, File file) {
 
     // Creates a file stream of the file created.
     FileOutputStream fileOutputStream = null;
@@ -140,7 +139,7 @@ public class FileUploader {
     }
     return extension;
   }
-  
+
   /**
    * Creates a random name.
    * @return a random generated string.
