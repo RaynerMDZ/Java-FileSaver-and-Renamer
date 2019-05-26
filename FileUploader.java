@@ -46,7 +46,7 @@ public class FileUploader {
   public static File emptyFileSaveAndRename(String dir, MultipartFile multipartFile, String name) {
 
     String originalName = multipartFile.getOriginalFilename();
-    String extension = getFileExtensionRegex(originalName);
+    String extension = getFileExtension(originalName);
 
     // Creates a new empty file with the name provided and the same extension of the passed file.
     // File convertFile  = new File(DirCreator.UPLOAD_DIRECTORY + newName + ext);
