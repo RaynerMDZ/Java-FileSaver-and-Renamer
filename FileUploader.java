@@ -140,4 +140,12 @@ public class FileUploader {
     }
     return extension;
   }
+  
+  /**
+   * Creates a random name.
+   * @return a random generated string.
+   */
+  public static String generateString() {
+    return UUID.randomUUID().toString().replace("-", "");
+  }
 }
