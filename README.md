@@ -21,8 +21,8 @@ The reason why I decided to make this class was because I was looking around the
 
 ### getFileExtensionRegex(String name)
 	Removes all characters before the last 'DOT' from the name. This time using a REGEX.
-### generateString()
 	
+### generateString()
+	Creates a random name.
 
 #### Do not hesitate if you want to contribute. Fork immediately.
-	Creates a random name.
