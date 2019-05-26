@@ -1,4 +1,4 @@
-# Files Uploader
+# Java File Saver and Renamer
 This class allows you to upload, change the name, and generate a random name for a file.
 
 The reason why I decided to make this class was because I was looking around the internet for information on how to change the name of a MultipartFile.
