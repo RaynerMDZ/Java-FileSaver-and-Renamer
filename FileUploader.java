@@ -22,7 +22,6 @@ public class FileUploader {
    * @param name as the desired name for the file.
    * @return a boolean specifying if the upload was successful.
    */
-  @Transactional
   public static boolean pictureUploader(String directory, MultipartFile multipartFile, String name) {
 
     File file = emptyFileSaveAndRename(directory, multipartFile, name);
